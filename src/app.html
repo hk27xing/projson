@@ -15,8 +15,6 @@
       font: 10.5pt arial;
       color: #4d4d4d;
       line-height: 150%;
-      height: 500px;
-      width: 100%;
     }
 
     pre[class*="language-"] {
@@ -67,7 +65,6 @@
 
 
     #jsontransfer {
-      /* 自定义按钮样式 */
       padding: 10px 20px;
       background-color: #007BFF;
       color: #fff;
@@ -130,13 +127,9 @@
     }
 
     var textarea = document.getElementById('jsontransfer');
-
-    // 监听textarea的输入事件  
+ 
     textarea.addEventListener('input', function () {
-      // 获取textarea中的JSON数据  
       var jsonData = textarea.value;
-
-      // 使用Prism高亮显示JSON数据  
       Prism.highlight(jsonData, Prism.languages.json, 'json');
     });
 
@@ -147,10 +140,10 @@
       try {
         var jsonObject = JSON.parse(json);
         console.log("JSON validate success");
-        editor = null;
-        editor = new JSONEditor(container, options, jsonObject);
+        editor.set(jsonObject);
       } catch (error) {
         console.log("JSON validate fail：" + error.message);
+        alert("JSON validate fail：" + error.message);
       }
     }
 
