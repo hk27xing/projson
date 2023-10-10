@@ -4,5 +4,8 @@
 /static/css/*
     Content-Type: text/css
 
-/static/img/*
+/static/img/jsoneditor-icons.svg
     Content-Type: image/svg+xml
+
+/static/img/icon.jpeg
+    Content-Type: image/jpeg
